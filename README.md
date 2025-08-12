@@ -27,9 +27,6 @@ Docker & Docker Compose
 Lombok, MapStruc  
 
 🐳 Como Executar:
-  
-No terminal digite:  
-docker-compose up --build  
 
 RabbitMQ: http://localhost:15672  
 order-service: http://localhost:8080  
