@@ -1,7 +1,7 @@
-package Pedidos.controller;
+package com.example.demo.Pedidos.controller;
 
-import Pedidos.model.NotificacaoModel;
-import Pedidos.repository.NotificacaoRepository;
+import com.example.demo.Pedidos.model.NotificacaoModel;
+import com.example.demo.Pedidos.repository.NotificacaoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

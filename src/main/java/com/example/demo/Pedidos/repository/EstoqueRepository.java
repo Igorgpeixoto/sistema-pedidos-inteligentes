@@ -1,6 +1,6 @@
-package Pedidos.repository;
+package com.example.demo.Pedidos.repository;
 
-import Pedidos.model.EstoqueModel;
+import com.example.demo.Pedidos.model.EstoqueModel;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

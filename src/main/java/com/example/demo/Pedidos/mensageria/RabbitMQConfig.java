@@ -1,4 +1,4 @@
-package Pedidos.mensageria;
+package com.example.demo.Pedidos.mensageria;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;

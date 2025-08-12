@@ -1,9 +1,9 @@
-package Pedidos.Consumidores;
+package com.example.demo.Pedidos.Consumidores;
 
-import Pedidos.dto.InventarioResultadoDTO;
-import Pedidos.mensageria.RabbitMQConfig;
-import Pedidos.model.NotificacaoModel;
-import Pedidos.repository.NotificacaoRepository;
+import com.example.demo.Pedidos.dto.InventarioResultadoDTO;
+import com.example.demo.Pedidos.mensageria.RabbitMQConfig;
+import com.example.demo.Pedidos.model.NotificacaoModel;
+import com.example.demo.Pedidos.repository.NotificacaoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -24,7 +24,7 @@ public class NotificacaoConsumidor {
                 .pedidoId(resultado.getPedidoId())
                 .sucesso(resultado.isAtualizado())
                 .mensagem(resultado.getMensagem())
-                .criadoEm(OffsetDateTime.now())
+                .criadoEm(OffsetDateTime.now().toInstant())
                 .build();
 
         notificacaoRepository.save(n);

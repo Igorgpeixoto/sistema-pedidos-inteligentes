@@ -1,14 +1,12 @@
-package Pedidos.Consumidores;
+package com.example.demo.Pedidos.Consumidores;
 
-import Pedidos.dto.InventarioResultadoDTO;
-import Pedidos.dto.PagamentoResultadoDTO;
-import Pedidos.dto.PedidosDTO;
-import Pedidos.mensageria.RabbitMQConfig;
+import com.example.demo.Pedidos.dto.InventarioResultadoDTO;
+import com.example.demo.Pedidos.dto.PedidosDTO;
+import com.example.demo.Pedidos.mensageria.RabbitMQConfig;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
-import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor

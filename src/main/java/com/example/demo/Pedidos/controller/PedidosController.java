@@ -1,7 +1,7 @@
-package Pedidos.controller;
+package com.example.demo.Pedidos.controller;
 
-import Pedidos.dto.PedidosDTO;
-import Pedidos.service.PedidosService;
+import com.example.demo.Pedidos.dto.PedidosDTO;
+import com.example.demo.Pedidos.service.PedidosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

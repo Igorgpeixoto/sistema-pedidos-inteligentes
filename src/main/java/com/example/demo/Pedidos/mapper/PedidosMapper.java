@@ -1,7 +1,7 @@
-package Pedidos.mapper;
+package com.example.demo.Pedidos.mapper;
 
-import Pedidos.dto.PedidosDTO;
-import Pedidos.model.PedidosModel;
+import com.example.demo.Pedidos.dto.PedidosDTO;
+import com.example.demo.Pedidos.model.PedidosModel;
 import org.springframework.stereotype.Component;
 
 @Component

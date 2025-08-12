@@ -1,4 +1,4 @@
-package Pedidos.model;
+package com.example.demo.Pedidos.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

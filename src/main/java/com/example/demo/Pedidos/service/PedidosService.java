@@ -1,12 +1,13 @@
-package Pedidos.service;
+package com.example.demo.Pedidos.service;
 
-import Pedidos.dto.PedidosDTO;
-import Pedidos.mapper.PedidosMapper;
-import Pedidos.mensageria.PedidosProdutor;
-import Pedidos.model.PedidosModel;
-import Pedidos.repository.PedidosRepository;
+import com.example.demo.Pedidos.dto.PedidosDTO;
+import com.example.demo.Pedidos.mapper.PedidosMapper;
+import com.example.demo.Pedidos.mensageria.PedidosProdutor;
+import com.example.demo.Pedidos.mensageria.RabbitMQConfig;
+import com.example.demo.Pedidos.model.PedidosModel;
+import com.example.demo.Pedidos.repository.PedidosRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,14 +20,16 @@ public class PedidosService {
 
     private final PedidosMapper pedidosMapper;
     private final PedidosRepository pedidosRepository;
-    private final PedidosProdutor pedidosProdutor;
+    private final RabbitTemplate rabbitTemplate;
 
     //Criar Pedidos
-    public PedidosDTO criar (PedidosDTO pedidosDTO) {
+    public PedidosDTO criar(PedidosDTO pedidosDTO) {
         PedidosModel pedidos = pedidosMapper.map(pedidosDTO);
         pedidos = pedidosRepository.save(pedidos);
-        return pedidosMapper.map(pedidos);
-    }
+        PedidosDTO salvo = pedidosMapper.map(pedidos);
+        rabbitTemplate.convertAndSend(RabbitMQConfig.FILA_PEDIDO_CRIADO, salvo);
+        System.out.println("[pedido-service] Pedido criado e enviado para fila: " + salvo.getId());
+        return salvo;}
 
     // Listar Pedidos
     public List<PedidosDTO> listarPedidos() {

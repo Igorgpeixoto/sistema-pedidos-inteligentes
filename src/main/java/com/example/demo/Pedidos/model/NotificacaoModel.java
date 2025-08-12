@@ -1,9 +1,10 @@
-package Pedidos.model;
+package com.example.demo.Pedidos.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.Instant;
 import java.time.OffsetDateTime;
 
 @Data
@@ -18,6 +19,6 @@ public class NotificacaoModel {
     private String pedidoId;
     private boolean sucesso;
     private String mensagem;
-    private OffsetDateTime criadoEm;
+    private Instant criadoEm;
 
 }

@@ -1,4 +1,4 @@
-package Pedidos.dto;
+package com.example.demo.Pedidos.dto;
 
 import lombok.*;
 

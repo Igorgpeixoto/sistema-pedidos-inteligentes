@@ -1,8 +1,8 @@
-package Pedidos.Consumidores;
+package com.example.demo.Pedidos.Consumidores;
 
-import Pedidos.dto.InventarioResultadoDTO;
-import Pedidos.mensageria.RabbitMQConfig;
-import Pedidos.service.EstoqueService;
+import com.example.demo.Pedidos.dto.InventarioResultadoDTO;
+import com.example.demo.Pedidos.mensageria.RabbitMQConfig;
+import com.example.demo.Pedidos.service.EstoqueService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
